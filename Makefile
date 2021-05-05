@@ -24,9 +24,6 @@ surf: $(OBJ)
 
 $(OBJ) $(WOBJ): config.h common.h config.mk
 
-config.h:
-	cp config.def.h $@
-
 $(OBJ): $(SRC)
 	$(CC) $(SURFCFLAGS) $(CFLAGS) -c $(SRC)
 
@@ -45,7 +42,7 @@ distclean: clean
 
 dist: distclean
 	mkdir -p surf-$(VERSION)
-	cp -R LICENSE Makefile config.mk config.def.h README \
+	cp -R LICENSE Makefile config.mk README \
 	    surf-open.sh arg.h TODO.md surf.png \
 	    surf.1 $(SRC) $(CSRC) $(WSRC) surf-$(VERSION)
 	tar -cf surf-$(VERSION).tar surf-$(VERSION)
