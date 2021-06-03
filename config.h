@@ -1,13 +1,13 @@
 /* modifier 0 means no modifier */
 static int surfuseragent    = 1;  /* Append Surf version to default WebKit user agent */
 static char *fulluseragent  = ""; /* Or override the whole user agent string */
-static char *scriptfile     = "~/.surf/script.js";
-static char *styledir       = "~/.surf/styles/";
-static char *certdir        = "~/.surf/certificates/";
-static char *cachedir       = "~/.surf/cache/";
-static char *cookiefile     = "~/.surf/cookies.txt";
+static char *scriptfile     = "~/.config/surf/script.js";
+static char *styledir       = "~/.config/surf/styles/";
+static char *certdir        = "~/.local/share/surf/certificates/";
+static char *cachedir       = "~/.cache/surf/";
+static char *cookiefile     = "~/.local/share/surf/cookies.txt";
 static char **plugindirs    = (char*[]){
-	"~/.surf/plugins/",
+	"~/.config/surf/plugins/",
 	LIBPREFIX "/mozilla/plugins/",
 	NULL
 };
@@ -199,3 +199,4 @@ static Button buttons[] = {
 	{ OnAny,        0,              9,      clicknavigate,  { .i = +1 },    1 },
 	{ OnMedia,      MODKEY,         1,      clickexternplayer, { 0 },       1 },
 };
+
